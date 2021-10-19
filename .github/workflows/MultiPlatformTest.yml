@@ -1,0 +1,14 @@
+---
+name: MultiPlatformTest
+
+on: workflow_dispatch
+
+# Placeholder, designed to fail
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - shell: bash
+        run: exit 1

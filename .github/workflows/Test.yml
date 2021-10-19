@@ -1,0 +1,35 @@
+---
+name: Test
+
+on: [push, workflow_dispatch]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+
+      - name: Checkout Repository
+        uses: actions/checkout@v2
+
+      - name: Create build directory
+        shell: bash
+        run: mkdir build
+
+      - name: CMake Setup
+        shell: bash
+        working-directory: build
+        run: |
+          cmake ..
+
+      - name: Build
+        shell: bash
+        working-directory: build
+        run: |
+          cmake --build . --config Debug
+
+      - name: Run Tests
+        shell: bash
+        working-directory: build
+        run: |
+          cmake --build . --config Debug --target test
