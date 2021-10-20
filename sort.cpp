@@ -18,7 +18,7 @@ namespace {
         if (n1 > n2)
             swap(n1, n2);
     }
-};
+}
 
 // sort the entire vector in ascending order
 void sort(std::vector<int>& v) {
