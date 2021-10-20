@@ -56,5 +56,17 @@ int main() {
         assert(v == std::vector<int>({ 1, 2 }));
     }
 
+    {
+        std::vector<int> v{ 3, 2, 1 };
+
+        assert(!v.empty());
+        assert(v.size() == 3);
+        assert(v == std::vector<int>({ 3, 2, 1 }));
+        sort(v);
+        assert(!v.empty());
+        assert(v.size() == 3);
+        assert(v == std::vector<int>({ 1, 2, 3 }));
+    }
+
     return 0;
 }
