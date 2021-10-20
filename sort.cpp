@@ -13,6 +13,11 @@ namespace {
         n1 = n2;
         n2 = t;
     }
+
+    void order(int& n1, int& n2) {
+        if (n1 > n2)
+            swap(n1, n2);
+    }
 };
 
 // sort the entire vector in ascending order
@@ -21,5 +26,5 @@ void sort(std::vector<int>& v) {
     if (v.size() <= 1)
         return;
 
-    swap(v[0], v[1]);
+    order(v[0], v[1]);
 }
